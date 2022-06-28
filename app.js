@@ -122,7 +122,8 @@ WebMidi.enable((eer) => {
 	}
 
 	console.log(eer);
-
+    console.log(WebMidi.inputs);
+	
 	WebMidi.inputs[0].addListener('noteon','all',(e) =>{
 		const { note, velocity } = e ;
 		const { accidental, name, octave } = note ;
