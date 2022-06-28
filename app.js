@@ -103,10 +103,10 @@ function keyTyped() {
 	}  else if (key == 'm') {
 		// sample[5].play();
 		animation.push(new Anim_m());
-	}  else if (key == '1') {
-		// sample[5].play();
-		animation.push(new Anim_1());
-	}
+	  } // else if (key == '1') {
+	// 	// sample[5].play();
+	// 	animation.push(new Anim_1());
+	// }
 	if(animation.length > maxAnim){
 		animation.splice(1, 1);
 	}
@@ -709,22 +709,22 @@ class Anim_m {
 
 
 // Animation 1
-class Anim_1 {
+// class Anim_1 {
 
-	constructor() {
-		this.width = 0;
-		this.speed = 70;
-		this.alpha = 255;
-	}
-	draw() {
-		noStroke();
-		fill(57, 162, 150, this.alpha);
-		rectMode(CENTER);
-		rect(10, 10, this.width, height);
-		this.height += this.speed;
-		this.alpha *= 0.99;
-	}
-}
+// 	constructor() {
+// 		this.width = 0;
+// 		this.speed = 70;
+// 		this.alpha = 255;
+// 	}
+// 	draw() {
+// 		noStroke();
+// 		fill(57, 162, 150, this.alpha);
+// 		rectMode(CENTER);
+// 		rect(10, 10, this.width, height);
+// 		this.height += this.speed;
+// 		this.alpha *= 0.99;
+// 	}
+// }
 
 
 
