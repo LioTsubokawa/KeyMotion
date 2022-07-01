@@ -428,14 +428,14 @@ class Anim_y {
 	}
 	draw() {
 		stroke(61,145,179);
-		strokeWeight(20);
+		strokeWeight(50);
 		noFill();
 		rectMode(CENTER);
-		rect(width / 2, height / 2, this.width, this.height);
-		this.width *= 0.85;
-		this.height *= 0.85;
+		circle(width / 2, height / 2, this.width, this.height);
+		this.width *= 0.95;
+		this.height *= 0.95;
 		rectMode(CORNER);
-		strokeWeight(1);
+		strokeWeight(5);
 	}
 }
 
@@ -500,14 +500,14 @@ class Anim_z {
 	}
 	draw() {
 		stroke(75,189,198);
-		strokeWeight(20);
+		strokeWeight(50);
 		noFill();
 		rectMode(CENTER);
 		circle(width / 2, height / 2, this.width, this.height);
-		this.width *= 0.85;
-		this.height *= 0.85;
+		this.width *= 0.95;
+		this.height *= 0.95;
 		rectMode(CORNER);
-		strokeWeight(1);
+		strokeWeight(5);
 	}
 }
 
@@ -586,14 +586,14 @@ class Anim_v {
 	}
 	draw() {
 		stroke(94,137,173);
-		strokeWeight(20);
+		strokeWeight(50);
 		noFill();
 		rectMode(CENTER);
-		rect(width / 2, height / 2, this.width, this.height);
-		this.width *= 0.7;
-		this.height *= 0.7;
+		circle(width / 2, height / 2, this.width, this.height);
+		this.width *= 0.95;
+		this.height *= 0.95;
 		rectMode(CORNER);
-		strokeWeight(1);
+		strokeWeight(5);
 	}
 }
 
