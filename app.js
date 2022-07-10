@@ -103,6 +103,9 @@ function keyTyped() {
 	}  else if (key == 'm') {
 		// sample[5].play();
 		animation.push(new Anim_m());
+	  } else if (key == 'h') {
+		// sample[5].play();
+		animation.push(new Anim_h());
 	  } 
 	if(animation.length > maxAnim){
 		animation.splice(1, 1);
@@ -139,6 +142,11 @@ WebMidi.enable((eer) => {
 	console.log(accidental);
 
 
+	// if (accidental > 0.8 ) {
+	// 	this.posy = 0.2 ;
+	// }
+
+
 
 
 
@@ -149,7 +157,10 @@ WebMidi.enable((eer) => {
 		if (accidental === "#"){
 			animation.push(new Anim_w());
 		} else{
-			animation.push(new Anim_a());
+			animation.push(new Anim_a(velocity));
+			if ( velocity > 0.7  ) {
+				this.diameter += 30;
+			}
 		}
 	  }
 
@@ -283,19 +294,23 @@ WebMidi.enable((eer) => {
 
 // Animation A
 class Anim_a {
-	constructor() {
-		this.x = width / 2;
-		this.y = height / 2;
+	constructor(velocity) {
+		this.velocity=velocity;
+		this.x = random(width);
+		this.y = random(height);
 		this.diameter = 0;
 		this.alpha = 255;
+		console.log (this.velocity);
 	}
 	draw() {
-		noStroke();
+		stroke(255,255,255);
 		fill(227, 68, 61, this.alpha);
 		ellipse(this.x, this.y, this.diameter, this.diameter);
-		this.diameter += 10;
+		this.diameter += 20*this.velocity;
 		this.alpha *= 0.99;
-	}
+	} 
+	
+	
 }
 
 
@@ -303,17 +318,17 @@ class Anim_a {
 class Anim_w {
 	constructor() {
 		this.rotate = 0;
-		this.size = width;
+		this.size = random(width/2);
 		this.speed = 5;
 	}
 	draw() {
 		push();
 		fill(178, 57, 83);
 		noStroke();
-		translate(width / 2, height / 2);
+		translate(width, height);
 		rotate(radians(this.rotate));
 		rectMode(CENTER);
-		rect(0, 0, this.size, this.size);
+		rect(0,0,50,50);
 		pop();
 		this.rotate += this.speed;
 		this.size *= 0.95;
@@ -396,7 +411,7 @@ class Anim_t {
 		this.alpha = 255;
 	}
 	draw() {
-		noStroke();
+		stroke(255,255,255);
 		fill(208, 109, 72, this.alpha);
 		ellipse(this.x, this.y, this.diameter, this.diameter);
 		this.diameter += 10;
@@ -416,7 +431,7 @@ class Anim_g {
 		fill(0,185,200);
 		rect(0, this.posy - 50, width, 50);
 		rect(0, height - this.posy, width, 50);
-		this.posy *= 0.9;
+		this.posy *= 0.95;
 	}
 }
 
@@ -450,7 +465,7 @@ class Anim_j {
 		fill(183,105,147);
 		rect(0, this.posy - 50, width, 50);
 		rect(0, height - this.posy, width, 50);
-		this.posy *= 0.9;
+		this.posy *= 0.95;
 	}
 }
 
@@ -500,7 +515,7 @@ class Anim_z {
 	}
 	draw() {
 		stroke(75,189,198);
-		strokeWeight(50);
+		strokeWeight(30);
 		noFill();
 		rectMode(CENTER);
 		circle(width / 2, height / 2, this.width, this.height);
@@ -540,7 +555,7 @@ class Anim_x {
 		fill(67,100,174);
 		rect(0, this.posy - 50, width, 50);
 		rect(0, height - this.posy, width, 50);
-		this.posy *= 0.9;
+		this.posy *= 0.95;
 	}
 }
 
@@ -555,7 +570,7 @@ class Anim_r {
 		fill(123,96,159);
 		rect(0, this.posy - 50, width, 50);
 		rect(0, height - this.posy, width, 50);
-		this.posy *= 0.9;
+		this.posy *= 0.95;
 	}
 }
 
@@ -710,6 +725,21 @@ class Anim_m {
 
 
 
-
+// Animation H
+class Anim_h {
+	constructor() {
+		this.x = width / 2;
+		this.y = height / 2;
+		this.diameter = 0;
+		this.alpha = 255;
+	}
+	draw() {
+		noStroke();
+		fill(227, 68, 61, this.alpha);
+		ellipse(this.x, this.y, this.diameter, this.diameter);
+		this.diameter -= 10;
+		this.alpha *= 0.99;
+	}
+}
 
 

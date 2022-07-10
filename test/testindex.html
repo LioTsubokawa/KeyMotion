@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>motiontest</title>
+    <link rel="stylesheet" href="teststyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <!-- <script src="app.js"></script> -->
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/webmidi@next/dist/iife/webmidi.iife.js"></script>
+    <script src="test.js"></script>
+  <script>
+//     const audioCtx = new AudioContext();
+
+//     WebMidi.enable(err => {
+//       if (err) {
+//         alert('Web MIDI APIは使えません。');
+//         return;
+//       }
+
+//       WebMidi.inputs[0].addListener('noteon', 'all', e => {
+//         const { note, velocity } = e;
+//         const { accidental, name, octave } = note;
+//         const offset = name === 'A' || name === 'B' ? 1 : 0;
+        
+//         console.log(`鍵盤が押されました
+// 押された強さ: ${ velocity }
+// 押されたコード: ${ name }${accidental || ''}${octave + offset}
+// `);
+//       });
+
+//       WebMidi.inputs[0].addListener('noteoff', 'all', e => {
+//         const { note, velocity } = e;
+//         const { accidental, name, octave } = note;
+//         const offset = name === 'A' || name === 'B' ? 1 : 0;
+        
+//         console.log(`鍵盤が離されました
+// 押された強さ: ${velocity}
+// 押されたコード: ${name}${accidental || ''}${octave + offset}
+// `);
+//       });
+//     });
+  </script>
+  </body>
+</html>
