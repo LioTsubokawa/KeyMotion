@@ -1,7 +1,12 @@
 let animation = [];
 let num;
 const maxAnim = 6;
+let imgE;
 
+function preload() {
+	// 画像を読み込む
+  imgE = loadImage('/orijinal/3D.jpg'); // 画像ファイル名には記号を含めないようにする
+}
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -343,6 +348,8 @@ class Anim_e {
 	// 	img = loadImage('3D#.jpg');
 	//   }
 	draw() {
+		image(imgE, 0, 0);
+
 		// setup() {
 		// 	let img;
 		// 	image(img, 0, 0);
