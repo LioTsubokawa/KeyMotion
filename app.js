@@ -155,7 +155,7 @@ WebMidi.enable((eer) => {
 	
 	if (name === "C" && octave + offset === 3 ) {
 		if (accidental === "#"){
-			animation.push(new Anim_w());
+			animation.push(new Anim_w(velocity));
 		} else{
 			animation.push(new Anim_a(velocity));
 			if ( velocity > 0.7  ) {
@@ -166,9 +166,9 @@ WebMidi.enable((eer) => {
 
 	if (name === "D" && octave + offset === 3 ) {
 		if (accidental === "#"){
-			animation.push(new Anim_e());
+			animation.push(new Anim_e(velocity));
 		} else{
-			animation.push(new Anim_s());
+			animation.push(new Anim_s(velocity));
 		}
 	  }
 
@@ -316,53 +316,92 @@ class Anim_a {
 
 // Animation W
 class Anim_w {
-	constructor() {
-		this.rotate = 0;
-		this.size = random(width/2);
-		this.speed = 5;
+	constructor(velocity) {
+		this.velocity=velocity;
+		// this.x1 += random(width)*this.velocity;
+		// this.y1 += random(height)*this.velocity;
+		// this.x2 += random(width)*this.velocity;
+		// this.y2 += random(height)*this.velocity;
+		// this.x3 += random(width)*this.velocity;
+		// this.y3 += random(height)*this.velocity;
+		this.x1 = random(width*this.velocity);
+		this.y1 = random(height*this.velocity);
+		this.x2 = random(width*this.velocity);
+		this.y2 = random(height*this.velocity);
+		this.x3 = random(width*this.velocity);
+		this.y3 = random(height*this.velocity);
+		this.diameter = 0;
+		this.alpha = 255;
+		console.log (this.velocity);
 	}
 	draw() {
-		push();
-		fill(178, 57, 83);
-		noStroke();
-		translate(width, height);
-		rotate(radians(this.rotate));
-		rectMode(CENTER);
-		rect(0,0,50,50);
-		pop();
-		this.rotate += this.speed;
-		this.size *= 0.95;
-	}
+		stroke(255,255,255,this.alpha);
+		fill(169, 54, 79, this.alpha);
+		triangle(this.x1, this.y1, this.x2,this.y2,this.x3,this.y3,this.diameter);
+		this.diameter += 25*this.velocity;
+		this.alpha *= 0.99;
+	} 
+	// constructor() {
+	// 	this.rotate = 0;
+	// 	this.size = random(width);
+	// 	this.speed = 5;
+	// }
+	// draw() {
+	// 	push();
+	// 	fill(178, 57, 83);
+	// 	noStroke();
+	// 	translate(width, height);
+	// 	rotate(radians(this.rotate));
+	// 	rectMode(CENTER);
+	// 	rect(0,0,50,50);
+	// 	pop();
+	// 	this.rotate += this.speed;
+	// 	this.size *= 0.95;
+	// }
 }
+
+
 
 
 // Animation S
 class Anim_s {
-	constructor() {
-		this.width = 0;
-		this.speed = 80;
+	
+	constructor(velocity) {
+		this.velocity=velocity;
+		this.x = random(width);
+		this.y = random(height);
+		this.r = random(200,500)*this.velocity;
+		// this.r1 = random(200,500);
+		// this.r2 = random(200,500);
+		this.diameter = 0;
 		this.alpha = 255;
+		this.rotate = 0;
+		this.speed = 5;
+		console.log (this.velocity);
 	}
 	draw() {
-		noStroke();
-		fill(209, 171, 67, this.alpha);
-		rectMode(CORNER);
-		rect(0, 0, this.width, height);
-		this.width += this.speed;
-		this.alpha *= 0.99;
-	}
+		stroke(255,255,255,this.alpha);
+		fill(202, 166, 67, this.alpha);
+		arc(this.x, this.y,this.r,this.r, 0, PI + QUARTER_PI, PIE,this.diameter);
+		this.diameter += 10*this.velocity;
+		this.rotate += this.speed;
+		this.alpha *= 0.95;
+	} 
 }
 
 
 // Animation E
 class Anim_e {
-	constructor() {
+	constructor(velocity) {
+		this.velocity=velocity;
+		this.x = random(width)*this.velocity;
+		this.y = random(height)*this.velocity;
 		this.alpha = 255;
 	}
 	draw() {
 		noStroke();
 		fill(143, 173, 101, this.alpha);
-		rect(0, 0, width, height);
+		rect(this.x, this.y, 30, 30);
 		this.alpha -= 5;
 	}
 }
@@ -370,7 +409,8 @@ class Anim_e {
 
 // Animation D
 class Anim_d {
-	constructor() {
+	constructor(velocity) {
+		this.velocity=velocity;
 		this.rotate = 0;
 		this.size = width;
 		this.speed = 5;
