@@ -329,6 +329,7 @@ class Anim_s {
 }
 
 // Animation E
+//3D#.jpg
 class Anim_e {
 	constructor() {
 		// this.velocity=velocity;
@@ -368,4 +369,80 @@ class Anim_e {
 //  setup() {
 //   image(img, 0, 0);
 // }
+}
+
+
+// Animation D
+//3E.jpg
+class Anim_d {
+	constructor() {
+		// this.velocity=velocity;
+		// this.rotate = 0;
+		// this.size = width;
+		// this.speed = 5;
+		this.alpha *= 0.99;
+	}
+
+	draw() {
+		// push();
+		// fill(98, 179, 86);
+		// noStroke();
+		// translate(width / 2, height / 2);
+		// rotate(radians(this.rotate));
+		// rectMode(CENTER);
+		// rect(0, 0, this.size, this.size);
+		// pop();
+		// this.rotate += this.speed;
+		// this.size *= 0.95;
+	}
+}
+
+// Animation F
+//3F.jpg
+class Anim_f {
+	constructor() {
+		// this.alpha = 255;
+		this.alpha *= 0.99;
+	}
+	draw() {
+		// noStroke();
+		// fill(185, 138, 98, this.alpha);
+		// rect(0, 0, width, height);
+		// this.alpha -= 5;
+	}
+}
+
+// Animation T
+//3F#.jpg
+class Anim_t {
+	constructor() {
+		// this.x = width / 2;
+		// this.y = height / 2;
+		// this.diameter = 0;
+		// this.alpha = 255;
+		this.alpha *= 0.99;
+	}
+	draw() {
+		// stroke(255,255,255);
+		// fill(208, 109, 72, this.alpha);
+		// ellipse(this.x, this.y, this.diameter, this.diameter);
+		// this.diameter += 10;
+	}
+}
+
+
+// Animation G
+//3G.jpg
+class Anim_g {
+	constructor() {
+		// this.posy = height + 50;
+		this.alpha *= 0.99;
+	}
+	draw() {
+		// noStroke();
+		// fill(0,185,200);
+		// rect(0, this.posy - 50, width, 50);
+		// rect(0, height - this.posy, width, 50);
+		// this.posy *= 0.95;
+	}
 }
