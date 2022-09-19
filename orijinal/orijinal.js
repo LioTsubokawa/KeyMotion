@@ -1,6 +1,20 @@
 let animation = [];
 let num;
 const maxAnim = 6;
+let imgE;
+let imgD;
+let imgF;
+let imgT;
+let imgG;
+
+function preload() {
+	// 画像を読み込む
+  imgE = loadImage('3Ds.png');
+  imgD = loadImage('3E.png');
+  imgF = loadImage('3F.png');
+  imgT = loadImage('3Fs.png');
+  imgG = loadImage('3G.png'); // 画像ファイル名には記号を含めないようにする
+}
 
 
 function setup() {
@@ -264,18 +278,15 @@ WebMidi.enable((eer) => {
 // Animation A
 class Anim_a {
 	constructor() {
-		// this.velocity=velocity;
 		this.x = random(width);
 		this.y = random(height);
 		this.diameter = 0;
 		this.alpha = 255;
-		// console.log (this.velocity);
 	}
 	draw() {
 		stroke(255,255,255,this.alpha);
 		fill(227, 68, 61, this.alpha);
 		square(this.x, this.y, 150);
-		// this.diameter += 20*this.velocity;
 		this.alpha *= 0.99;
 	} 
 	
@@ -285,18 +296,15 @@ class Anim_a {
 // Animation W
 class Anim_w {
 	constructor() {
-		// this.velocity=velocity;
 		this.x = random(width);
 		this.y = random(height);
 		this.diameter = 0;
 		this.alpha = 255;
-		// console.log (this.velocity);
 	}
 	draw() {
 		stroke(255,255,255,this.alpha);
 		fill(169, 54, 79, this.alpha);
 		quad(130, 110, 110, 170, 180, 170, 160, 110);
-		// this.diameter += 20*this.velocity;
 		this.alpha *= 0.99;
 	} 
 	
@@ -309,22 +317,12 @@ class Anim_s {
 		// this.velocity=velocity;
 		this.x = random(width);
 		this.y = random(height);
-		// this.r = random(200,500);
-		// this.r1 = random(200,500);
-		// this.r2 = random(200,500);
-		// this.diameter = 0;
 		this.alpha = 255;
-		// this.rotate = 0;
-		// this.speed = 5;
-		// console.log (this.velocity);
 	}
 	draw() {
 		stroke(255,255,255,this.alpha);
 		fill(202, 166, 67, this.alpha);
 		triangle(this.x, this.y, this.x-30, this.y+40, this.x+30, this.y+40);
-		// this.diameter += 10*this.velocity;
-		// this.rotate += this.speed;
-		this.alpha *= 0.99;
 	} 
 }
 
@@ -332,43 +330,16 @@ class Anim_s {
 //3D#.jpg
 class Anim_e {
 	constructor() {
-		// this.velocity=velocity;
-		// this.x = random(width)*this.velocity;
-		// this.y = random(height)*this.velocity;
 		this.x = random(width);
 		this.y = random(height);
 		this.alpha *= 0.99;
 	}
-	// preload(){
-	// 	img = loadImage('3D#.jpg');
-	//   }
 	draw() {
-		// setup() {
-		// 	let img;
-		// 	image(img, 0, 0);
-		//   };
-		// preload() {
-		// 	img = loadImage('orijinal/3D#.jpg');
-		// 	// let img;
-		//   };
-		//    setup() {
-		// 	image(img, 0, 0);
-		//   }
-		// image(random(0,500),random(0,500),random(0,500),random(0,500),this.alpha *= 0.99);
-		// noStroke();
-		// fill(143, 173, 101, this.alpha);
-		// rect(this.x, this.y, 30, 30);
-		// this.alpha -= 5;
+		image(imgE, this.x,this.y ,50,50,this.alpha);
 		this.alpha *= 0.99;
 	}
 
-//  preload() {
-//   img = loadImage('orijinal/3D#.jpg');
-//   let img;
-// }
-//  setup() {
-//   image(img, 0, 0);
-// }
+
 }
 
 
@@ -376,24 +347,13 @@ class Anim_e {
 //3E.jpg
 class Anim_d {
 	constructor() {
-		// this.velocity=velocity;
-		// this.rotate = 0;
-		// this.size = width;
-		// this.speed = 5;
+		this.x = random(width);
+		this.y = random(height);
 		this.alpha *= 0.99;
 	}
 
 	draw() {
-		// push();
-		// fill(98, 179, 86);
-		// noStroke();
-		// translate(width / 2, height / 2);
-		// rotate(radians(this.rotate));
-		// rectMode(CENTER);
-		// rect(0, 0, this.size, this.size);
-		// pop();
-		// this.rotate += this.speed;
-		// this.size *= 0.95;
+		image(imgD, this.x,this.y ,50,50,this.alpha);
 	}
 }
 
@@ -402,9 +362,12 @@ class Anim_d {
 class Anim_f {
 	constructor() {
 		// this.alpha = 255;
+		this.x = random(width);
+		this.y = random(height);
 		this.alpha *= 0.99;
 	}
 	draw() {
+		image(imgF, this.x,this.y ,50,50,this.alpha);
 		// noStroke();
 		// fill(185, 138, 98, this.alpha);
 		// rect(0, 0, width, height);
@@ -420,9 +383,12 @@ class Anim_t {
 		// this.y = height / 2;
 		// this.diameter = 0;
 		// this.alpha = 255;
+		this.x = random(width);
+		this.y = random(height);
 		this.alpha *= 0.99;
 	}
 	draw() {
+		image(imgT, this.x,this.y ,50,50,this.alpha);
 		// stroke(255,255,255);
 		// fill(208, 109, 72, this.alpha);
 		// ellipse(this.x, this.y, this.diameter, this.diameter);
@@ -436,9 +402,12 @@ class Anim_t {
 class Anim_g {
 	constructor() {
 		// this.posy = height + 50;
+		this.x = random(width);
+		this.y = random(height);
 		this.alpha *= 0.99;
 	}
 	draw() {
+		image(imgG, this.x,this.y ,50,50,this.alpha);
 		// noStroke();
 		// fill(0,185,200);
 		// rect(0, this.posy - 50, width, 50);
