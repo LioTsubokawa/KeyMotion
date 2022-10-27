@@ -12,7 +12,7 @@ let imgG;
 let imgY;
 let imgU;
 let imgK;
-let imgq;
+let imgZ;
 let imgX;
 let imgR;
 let imgC;
@@ -39,7 +39,7 @@ function preload() {
   imgJ = loadImage('4A.png');
   imgU = loadImage('4As.png');
   imgK = loadImage('4B.png');
-  imgq = loadImage('4Cs.png'); 
+  imgZ = loadImage('4C.png'); 
   imgX = loadImage('4D.png');
   imgR = loadImage('4Ds.png'); 
   imgC = loadImage('4E.png'); 
@@ -50,8 +50,7 @@ function preload() {
   imgN = loadImage('5A.png');
   imgP = loadImage('5As.png');
   imgM = loadImage('5B.png'); 
-  imgH = loadImage('4C.png');
-  imgZ = loadImage('5C.png'); // 画像ファイル名には記号を含めないようにする
+  imgH = loadImage('5C.png'); // 画像ファイル名には記号を含めないようにする
 }
 
 
@@ -320,23 +319,18 @@ WebMidi.enable((eer) => {
 class Anim_a {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
+		this.x = (this.velocity)*width;
+		this.y = random(height);
 		this.diameter = 0;
 		this.alpha = 255;
 		console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.05,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgA, 0,0 );
-		pop();
+		image(imgA, this.x,0 ,(this.velocity)*500,(this.velocity)*500,this.alpha);
+		this.alpha *= 0.99;
 	} 
 	
 }
-
 
 
 
@@ -347,19 +341,14 @@ class Anim_a {
 class Anim_w {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
+		this.x = (this.velocity)*width;
+		this.y = random(height);
+		this.alpha *= 0.99;
 		console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.1,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgW, 0,0);
-		pop();
+		image(imgW,  this.x,50,(this.velocity)*500,(this.velocity)*500,this.alpha);
+		this.alpha *= 0.99;
 	}
 
 
@@ -370,20 +359,15 @@ class Anim_w {
 class Anim_s {
 	
 	constructor(velocity) {
-		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
+		 this.velocity=velocity;
+         this.x = (this.velocity)*width;
+         this.y = random(height);
+         this.alpha *= 0.99;
 		console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.15,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgS,0,0);
-		pop();
+		image(imgS, this.x,100 ,(this.velocity)*500,(this.velocity)*500,this.alpha);
+		this.alpha *= 0.99;
 	} 
 }
 
@@ -391,20 +375,15 @@ class Anim_s {
 //3D#.jpg
 class Anim_e {
 	constructor(velocity) {
-		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.velocity=velocity;
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.2,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgE,0,0);
-		pop();
+		image(imgE,this.x,150,(this.velocity)*500,(this.velocity)*500,this.alpha);
+		this.alpha *= 0.99;
 	}
 
 
@@ -416,20 +395,15 @@ class Anim_e {
 class Anim_d {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 
 	draw() {
-		push();
-		translate(width*0.25,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgD,0,0);
-		pop();
+		image(imgD,this.x,200,(this.velocity)*500,(this.velocity)*500,this.alpha);
+		this.alpha *= 0.99;
 	}
 }
 
@@ -438,19 +412,17 @@ class Anim_d {
 class Anim_f {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.3,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgF,0,0);
-		pop();
+		image(imgF, this.x,250 ,(this.velocity)*500,(this.velocity)*500,this.alpha);
+		// noStroke();
+		// fill(185, 138, 98, this.alpha);
+		// rect(0, 0, width, height);
+		// this.alpha -= 5;
 	}
 }
 
@@ -459,19 +431,17 @@ class Anim_f {
 class Anim_t {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.35,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgT,0,0);
-		pop();
+		image(imgT, this.x,300 ,(this.velocity)*500,(this.velocity)*500,this.alpha);
+		// stroke(255,255,255);
+		// fill(208, 109, 72, this.alpha);
+		// ellipse(this.x, this.y, this.diameter, this.diameter);
+		// this.diameter += 10;
 	}
 }
 
@@ -481,19 +451,14 @@ class Anim_t {
 class Anim_g {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.4,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgG,0,0);
-		pop();
+		image(imgG, this.x,350 ,(this.velocity)*500,(this.velocity)*500,this.alpha);
+		
 	}
 }
 
@@ -502,19 +467,13 @@ class Anim_g {
 class Anim_y {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.45,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgY,0,0);
-		pop();
+		image(imgY, this.x,400 ,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -523,19 +482,13 @@ class Anim_y {
 class Anim_j {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.5,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgJ,0,0);
-		pop();
+		image(imgJ, this.x,450,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -544,19 +497,13 @@ class Anim_j {
 class Anim_u {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.55,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgU,0,0);
-		pop();
+		image(imgU,this.x,500,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -565,84 +512,43 @@ class Anim_u {
 class Anim_k {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.6,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgK,0,0);
-		pop();
+		image(imgK,this.x,550,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
-// Animation H
-//5C.jpg
-class Anim_h {
-	constructor(velocity) {
-		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
-	}
-	draw() {
-		push();
-		translate(width*0.65,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgH,0,0);
-		pop();
-	}
-}
-
-// Animation Q
+// Animation Z
 //4C.jpg
-class Anim_q {
+class Anim_z {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.7,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgq,0,0);
-		pop();
+		image(imgZ,this.x,600,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
-
-
 
 // Animation X
 //4D.jpg
 class Anim_x {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.75,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgX,0,0);
-		pop();
+		image(imgX,this.x,650,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -651,19 +557,13 @@ class Anim_x {
 class Anim_r {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.8,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgR, 0,0);
-		pop();
+		image(imgR,this.x,700,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -672,19 +572,13 @@ class Anim_r {
 class Anim_c {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.85,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgC,0,0);
-		pop();
+		image(imgC,this.x,750,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 // Animation V
@@ -692,19 +586,13 @@ class Anim_c {
 class Anim_v {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.9,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgV,0,0);
-		pop();
+		image(imgV,this.x,800,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -713,19 +601,13 @@ class Anim_v {
 class Anim_i {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*0.95,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgI,0,0);
-		pop();
+		image(imgI, this.x,850,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -734,19 +616,13 @@ class Anim_i {
 class Anim_b {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*1.0,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgB,0,0);
-		pop();
+		image(imgB,this.x,900,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -755,19 +631,13 @@ class Anim_b {
 class Anim_o {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*1.05,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgO, 0,0);
-		pop();
+		image(imgO,this.x,950,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -776,19 +646,13 @@ class Anim_o {
 class Anim_n {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*1.1,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgN,0,0);
-		pop();
+		image(imgN,this.x,1000,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -797,17 +661,13 @@ class Anim_n {
 class Anim_p {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.alpha *= 0.99;
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*1.15,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgP,0,0);
-		pop();
+		image(imgP,this.x,1050,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
@@ -816,38 +676,28 @@ class Anim_p {
 class Anim_m {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.alpha *= 0.99;
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*1.15,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgM,0,0);
-		pop();
+		image(imgM,this.x,1100,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
 
 
-// Animation Z
-//4C.jpg
-class Anim_z {
+// Animation H
+//5C.jpg
+class Anim_h {
 	constructor(velocity) {
 		this.velocity=velocity;
-		this.x = random(width);
-		this.y = (this.velocity)*height;
-		this.diameter = 0;
-		this.alpha = 255;
-		console.log (this.velocity);
+        this.x = (this.velocity)*width;
+        this.y = random(height);
+        this.alpha *= 0.99;
+       console.log (this.velocity);
 	}
 	draw() {
-		push();
-		translate(width*1.2,this.y);
-		rotate(PI / ((this.velocity)*10));
-		scale(this.velocity*0.5);
-		image(imgZ,0,0);
-		pop();
+		image(imgH,this.x,1150,(this.velocity)*500,(this.velocity)*500,this.alpha);
 	}
 }
