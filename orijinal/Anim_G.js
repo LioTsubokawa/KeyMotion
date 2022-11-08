@@ -1,14 +1,15 @@
 // Animation G
 //3G.png
 class Anim_G {
-	constructor(velocity) {
+	constructor(velocity,img) {
 		this.velocity=velocity;
         this.img=img;
 		this.x = random(width);
-		this.y = (this.velocity)*height-width/26;
+		this.y = (this.velocity)*height+random(-10,10);
 		this.diameter = 0;
 		this.alpha = 255;
 		console.log (this.velocity);
+		console.log (this.y);
 	}
 	draw() {
 		push();

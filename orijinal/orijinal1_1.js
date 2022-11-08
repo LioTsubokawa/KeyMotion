@@ -1,31 +1,18 @@
 let animation = [];
 let num;
-const maxAnim = 6;
+// const maxAnim = 6;
 let imgC;
-// let imgS;
-// let imgW;
-// let imgE;
-// let imgD;
-// let imgF;
-// let imgT;
-// let imgG;
-// let imgY;
-// let imgU;
-// let imgK;
-// let imgq;
-// let imgX;
-// let imgR;
-// let imgC;
-// let imgV;
-// let imgI;
-// let imgB;
-// let imgO;
-// let imgN;
-// let imgP;
-// let imgM;
-// let imgH;
-// let img0;
-
+let ingCs;
+let imgD;
+let imgDs;
+let imgE;
+let imgF;
+let imgFs;
+let imgG;
+let imgGs;
+let imgA;
+let imgAs;
+let imgB;
 function preload() {
 
   imgC = loadImage('3C.png');
@@ -186,9 +173,9 @@ WebMidi.enable((eer) => {
 
     if (name === "C" && octave + offset === 3 ) {
 		if (accidental === "#"){
-			animation.push(new Anim_Cs(velocity));
+			animation.push(new Anim_Cs(velocity,imgCs));
 		} else{
-			animation.push(new Anim_C(velocity));
+			animation.push(new Anim_C(velocity,imgC));
 		}
 	  }
 
@@ -202,24 +189,25 @@ WebMidi.enable((eer) => {
 
 	if (name === "D" && octave + offset === 3 ) {
 		if (accidental === "#"){
-			animation.push(new Anim_Ds(velocity));
+			animation.push(new Anim_Ds(velocity,imgDs));
 		} else{
-			animation.push(new Anim_D(velocity));
+			animation.push(new Anim_D(velocity,imgD));
 		}
 	  }
 	
 
 	if (name === "E" && octave + offset === 3 ) {
-		animation.push(new Anim_E((velocity)));
+		animation.push(new Anim_E((velocity,imgE)));
+		console.log (imgE);
 	  }
 
 	
 
 	if (name === "F" && octave + offset === 3 ) {
 		if (accidental === "#"){
-			animation.push(new Anim_Fs(velocity));
+			animation.push(new Anim_Fs(velocity,imgFs));
 		} else{
-			animation.push(new Anim_F(velocity));
+			animation.push(new Anim_F(velocity,imgF));
 		}
 	  }
 
@@ -227,9 +215,9 @@ WebMidi.enable((eer) => {
 
 	if (name === "G" && octave + offset === 3 ) {
 		if (accidental === "#"){
-			animation.push(new Anim_Gs(velocity));
+			animation.push(new Anim_Gs(velocity,imgGs));
 		} else{
-			animation.push(new Anim_G(velocity));
+			animation.push(new Anim_G(velocity,imgG));
 		}
 	  }
 
@@ -237,24 +225,24 @@ WebMidi.enable((eer) => {
 
 	if (name === "A" && octave + offset === 4 ) {
 		if (accidental === "#"){
-			animation.push(new Anim_As(velocity));
+			animation.push(new Anim_As(velocity,imgAs));
 		} else{
-			animation.push(new Anim_A(velocity));
+			animation.push(new Anim_A(velocity,imgA));
 		}
 	  }
 
 	
 	if (name === "B" && octave + offset === 4 ) {
-		animation.push(new Anim_B(velocity));
+		animation.push(new Anim_B(velocity,imgB));
 	  }
 
 	
 
 	if (name === "C" && octave + offset === 4 ) {
 		if (accidental === "#"){
-			animation.push(new Anim_Cs(velocity,imgq));
+			animation.push(new Anim_Cs(velocity,imgCs));
 		} else{
-			animation.push(new Anim_C(velocity));
+			animation.push(new Anim_C(velocity,imgC));
 		}
 	  }
 	

@@ -12,10 +12,11 @@ class Anim_Cs {
 		this.velocity=velocity;
         this.img=img;
 		this.x = random(width);
-		this.y = (this.velocity)*height;
+		this.y = (this.velocity)*height+random(-10,10);
 		this.diameter = 0;
 		this.alpha = 255;
 		console.log (this.velocity);
+		console.log (this.y);
 	}
 	draw() {
 		push();
