@@ -356,7 +356,7 @@ class Anim_w {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.1);
+		translate(this.x,height*0.07);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgW, 0,0);
@@ -380,7 +380,7 @@ class Anim_s {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.15);
+		translate(this.x,height*0.09);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgS,0,0);
@@ -401,7 +401,7 @@ class Anim_e {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.2);
+		translate(this.x,height*0.1);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgE,0,0);
@@ -426,7 +426,7 @@ class Anim_d {
 
 	draw() {
 		push();
-		translate(this.x,height*0.25);
+		translate(this.x,height*0.12);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgD,0,0);
@@ -447,7 +447,7 @@ class Anim_f {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.3-0.25);
+		translate(this.x,height*0.14);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgF,0,0);
@@ -468,7 +468,7 @@ class Anim_t {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.35-0.25);
+		translate(this.x,height*0.16);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgT,0,0);
@@ -489,7 +489,7 @@ class Anim_g {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.4-0.25);
+		translate(this.x,height*0.18);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgG,0,0);
@@ -510,7 +510,7 @@ class Anim_y {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.45-0.25);
+		translate(this.x,height*0.2);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgY,0,0);
@@ -531,7 +531,7 @@ class Anim_j {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.5-0.25);
+		translate(this.x,height*0.22);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgJ,0,0);
@@ -552,7 +552,7 @@ class Anim_u {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.55-0.25);
+		translate(this.x,height*0.24);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgU,0,0);
@@ -573,7 +573,7 @@ class Anim_k {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.6-0.25);
+		translate(this.x,height*0.26);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgK,0,0);
@@ -594,7 +594,7 @@ class Anim_h {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.65-0.25);
+		translate(this.x,height*0.28);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgH,0,0);
@@ -615,7 +615,7 @@ class Anim_q {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.7-0.25);
+		translate(this.x,height*0.3);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgq,0,0);
@@ -638,7 +638,7 @@ class Anim_x {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.75-0.25);
+		translate(this.x,height*0.32);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgX,0,0);
@@ -659,7 +659,7 @@ class Anim_r {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.8-0.25);
+		translate(this.x,height*0.34);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgR, 0,0);
@@ -680,7 +680,7 @@ class Anim_c {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.85-0.25);
+		translate(this.x,height*0.36);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgC,0,0);
@@ -700,7 +700,7 @@ class Anim_v {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.9-0.25);
+		translate(this.x,height*0.38);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgV,0,0);
@@ -721,7 +721,7 @@ class Anim_i {
 	}
 	draw() {
 		push();
-		translate(this.x,height*0.95-0.25);
+		translate(this.x,height*0.4);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgI,0,0);
@@ -742,7 +742,7 @@ class Anim_b {
 	}
 	draw() {
 		push();
-		translate(this.x,height*1.0-0.25);
+		translate(this.x,height*0.42);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgB,0,0);
@@ -763,7 +763,7 @@ class Anim_o {
 	}
 	draw() {
 		push();
-		translate(this.x,height*1.05-0.25);
+		translate(this.x,height*0.44);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgO, 0,0);
@@ -784,7 +784,7 @@ class Anim_n {
 	}
 	draw() {
 		push();
-		translate(this.x,height*1.1-0.25);
+		translate(this.x,height*0.46);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgN,0,0);
@@ -805,7 +805,7 @@ class Anim_p {
 	}
 	draw() {
 		push();
-		translate(this.x,height*1.15-0.25);
+		translate(this.x,height*0.48);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgP,0,0);
@@ -826,7 +826,7 @@ class Anim_m {
 	}
 	draw() {
 		push();
-		translate(this.x,height*1.2-0.25);
+		translate(this.x,height*0.5);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgM,0,0);
@@ -848,7 +848,7 @@ class Anim_z {
 	}
 	draw() {
 		push();
-		translate(this.x,height*1.25-0.25);
+		translate(this.x,height*0.52);
 		rotate(PI / ((this.velocity)*10));
 		scale(this.velocity*0.5);
 		image(imgZ,0,0);

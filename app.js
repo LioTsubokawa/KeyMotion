@@ -273,6 +273,7 @@ WebMidi.enable((eer) => {
 	  
 	 
 	if (name === "C" && octave + offset === 5 ) {
+		
 		animation.push(new Anim_z());
 	  }
 	
