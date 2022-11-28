@@ -2,7 +2,7 @@ let animation = [];
 let num;
 // const maxAnim = 6;
 let imgC;
-let ingCs;
+let imgCs;
 let imgD;
 let imgDs;
 let imgE;
@@ -13,34 +13,23 @@ let imgGs;
 let imgA;
 let imgAs;
 let imgB;
+
 function preload() {
 
-  imgC = loadImage('3C.png');
-  imgCs = loadImage('3Cs.png');	// 画像を読み込む
-  imgD = loadImage('3D.png');
-  imgDs = loadImage('3Ds.png');
-  imgE = loadImage('3E.png');
-  imgF = loadImage('3F.png');
-  imgFs = loadImage('3Fs.png');
-  imgG = loadImage('3G.png');
-  imgGs = loadImage('3Gs.png');
-  imgA = loadImage('4A.png');
-  imgAs = loadImage('4As.png');
-  imgB = loadImage('4B.png');
-//   imgq = loadImage('4Cs.png'); 
-//   imgX = loadImage('4D.png');
-//   imgR = loadImage('4Ds.png'); 
-//   imgC = loadImage('4E.png'); 
-//   imgV = loadImage('4F.png');
-//   imgI = loadImage('4Fs.png'); 
-//   imgB = loadImage('4G.png');
-//   imgO = loadImage('4Gs.png'); 
-//   imgN = loadImage('5A.png');
-//   imgP = loadImage('5As.png');
-//   imgM = loadImage('5B.png'); 
-//   imgH = loadImage('4C.png');
-//   imgZ = loadImage('5C.png');
-//   img0 = loadImage('5Cs.png'); // 画像ファイル名には記号を含めないようにする
+  imgC  = loadImage('siro_C.png');
+  imgCs = loadImage('siro_Cs.png');	
+  imgD  = loadImage('siro_D.png');
+  imgDs = loadImage('siro_Ds.png');
+  imgE  = loadImage('siro_E.png');
+  imgF  = loadImage('siro_F.png');
+  imgFs = loadImage('siro_Fs.png');
+  imgG  = loadImage('siro_G.png');
+  imgGs = loadImage('siro_Gs.png');
+  imgA  = loadImage('siro_A.png');
+  imgAs = loadImage('siro_As.png');
+  imgB  = loadImage('siro_B.png');
+  // 画像を読み込む
+  // 画像ファイル名には記号を含めないようにする
 }
 
 
@@ -110,9 +99,9 @@ function keyTyped() {
 		animation.push(new Anim_n());
 	}  else if (key == 'm') {
 		animation.push(new Anim_m());
-	  } else if (key == 'h') {
+	} else if (key == 'h') {
 		animation.push(new Anim_h());
-	  } 
+	} 
 	if(animation.length > maxAnim){
 		animation.splice(1, 1);
 	}
@@ -171,13 +160,14 @@ WebMidi.enable((eer) => {
 	//   }
 
 
-    if (name === "C" && octave + offset === 3 ) {
+    if (name === "C" ) {
 		if (accidental === "#"){
-			animation.push(new Anim_Cs(velocity,imgCs));
+			animation.push(new Anim_Cs(velocity,imgCs,octave + offset));
 		} else{
-			animation.push(new Anim_C(velocity,imgC));
+			animation.push(new Anim_C(velocity,imgC,octave + offset));
+
 		}
-	  }
+	}
 
 	// if (name === "D" && octave + offset === 3 ) {
 	// 	if (accidental === "#"){
@@ -187,602 +177,72 @@ WebMidi.enable((eer) => {
 	// 	}
 	//   }
 
-	if (name === "D" && octave + offset === 3 ) {
+	if (name === "D" ) {
 		if (accidental === "#"){
-			animation.push(new Anim_Ds(velocity,imgDs));
+			animation.push(new Anim_Ds(velocity,imgDs,octave + offset));
 		} else{
-			animation.push(new Anim_D(velocity,imgD));
+			animation.push(new Anim_D(velocity,imgD,octave + offset));
 		}
-	  }
+	}
 	
 
-	if (name === "E" && octave + offset === 3 ) {
-		animation.push(new Anim_E((velocity,imgE)));
-		console.log (imgE);
-	  }
-
-	
-
-	if (name === "F" && octave + offset === 3 ) {
-		if (accidental === "#"){
-			animation.push(new Anim_Fs(velocity,imgFs));
-		} else{
-			animation.push(new Anim_F(velocity,imgF));
-		}
-	  }
-
-	
-
-	if (name === "G" && octave + offset === 3 ) {
-		if (accidental === "#"){
-			animation.push(new Anim_Gs(velocity,imgGs));
-		} else{
-			animation.push(new Anim_G(velocity,imgG));
-		}
-	  }
-
-	
-
-	if (name === "A" && octave + offset === 4 ) {
-		if (accidental === "#"){
-			animation.push(new Anim_As(velocity,imgAs));
-		} else{
-			animation.push(new Anim_A(velocity,imgA));
-		}
-	  }
-
-	
-	if (name === "B" && octave + offset === 4 ) {
-		animation.push(new Anim_B(velocity,imgB));
-	  }
-
-	
-
-	if (name === "C" && octave + offset === 4 ) {
-		if (accidental === "#"){
-			animation.push(new Anim_Cs(velocity,imgCs));
-		} else{
-			animation.push(new Anim_C(velocity,imgC));
-		}
-	  }
-	
-
-
-	if (name === "D" && octave + offset === 4 ) {
-		if (accidental === "#"){
-			animation.push(new Anim_r(velocity));
-		} else{
-			animation.push(new Anim_x(velocity));
-		}
-	  }
-
-	
-	  if (name === "E" && octave + offset === 4 ) {
-		animation.push(new Anim_c(velocity));
-	  }
-
-	
-	  if (name === "F" && octave + offset === 4 ) {
-		if (accidental === "#"){
-			animation.push(new Anim_i(velocity));
-		} else{
-			animation.push(new Anim_v(velocity));
-		}
-	  }
-	  
-	
-	  if (name === "G" && octave + offset === 4 ) {
-		if (accidental === "#"){
-			animation.push(new Anim_o(velocity));
-		} else{
-			animation.push(new Anim_b(velocity));
-		}
-	  }
-	
-
-
-	  if (name === "A" && octave + offset === 5 ) {
-		if (accidental === "#"){
-			animation.push(new Anim_p(velocity));
-		} else{
-			animation.push(new Anim_n(velocity));
-		}
-	  }
-
-	  if (name === "B" && octave + offset === 5 ) {
-		animation.push(new Anim_m(velocity));
-	  }
-	  
-	 
-	  if (name === "C" && octave + offset === 5 ) {
-		animation.push(new Anim_z(velocity));
-	  }
+	if (name === "E" ) {
+		animation.push(new Anim_E(velocity,imgE,octave + offset));
 		
+	}
+
 	
+
+	if (name === "F" ) {
+		if (accidental === "#"){
+			animation.push(new Anim_Fs(velocity,imgFs,octave + offset));
+		} else{
+			animation.push(new Anim_F(velocity,imgF,octave + offset));
+		}
+	}
+
+	
+
+	if (name === "G" ) {
+		if (accidental === "#"){
+			animation.push(new Anim_Gs(velocity,imgGs,octave + offset));
+		} else{
+			animation.push(new Anim_G(velocity,imgG,octave + offset));
+		}
+	}
+
+	
+
+	if (name === "A" ) {
+		if (accidental === "#"){
+			animation.push(new Anim_As(velocity,imgAs,octave + offset));
+		} else{
+			animation.push(new Anim_A(velocity,imgA,octave + offset));
+		}
+	}
+
+	
+	if (name === "B" ) {
+		animation.push(new Anim_B(velocity,imgB,octave + offset));
+	}
+
+	
+
+	if (name === "C" ) {
+		if (accidental === "#"){
+			animation.push(new Anim_Cs(velocity,imgCs,octave + offset));
+		} else{
+			animation.push(new Anim_C(velocity,imgC,octave + offset));
+		}
+	}
+	
+
+
+
 
 	
 	
-	});
-
+});
 });
 
-
-// // Animation A
-// //3C.png
-// class Anim_a {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.05,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity*0.5);
-// 		image(imgA, 0,0,width/26,width/26 );
-// 		pop();
-// 	} 
-	
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Animation D
-// //3E.jpg
-// class Anim_d {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-
-// 	draw() {
-// 		push();
-// 		translate(width*0.12,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgD,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-// // Animation F
-// //3F.jpg
-// class Anim_f {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.14,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgF,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-// // Animation T
-// //3F#.jpg
-// class Anim_t {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.16,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgT,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-
-// // Animation G
-// //3G.jpg
-// class Anim_g {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.18,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgG,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-// // Animation Y
-// //3Gs.jpg
-// class Anim_y {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.2,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgY,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-// // Animation J
-// //4A.jpg
-// class Anim_j {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.22,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgJ,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-// // Animation U
-// //4As.jpg
-// class Anim_u {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.24,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgU,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-// // Animation K
-// //4B.jpg
-// class Anim_k {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.26,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgK,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-// // Animation H
-// //5C.jpg
-// class Anim_h {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.28,this.y);
-// 		rotate(PI / ((this.velocity)/15));
-// 		scale(this.velocity);
-// 		image(imgH,0,0,width/26,width/26);
-// 		pop();
-// 	}
-// }
-
-// // Animation Q
-// //4C.jpg
-// class Anim_q {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.3,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgq,0,0);
-// 		pop();
-// 	}
-// }
-
-
-
-// // Animation X
-// //4D.jpg
-// class Anim_x {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.32,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgX,0,0);
-// 		pop();
-// 	}
-// }
-
-// // Animation R
-// //4Ds.jpg
-// class Anim_r {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.34,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgR, 0,0);
-// 		pop();
-// 	}
-// }
-
-// // Animation C
-// //4E.jpg
-// class Anim_c {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.36,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgC,0,0);
-// 		pop();
-// 	}
-// }
-// // Animation V
-// //4F.jpg
-// class Anim_v {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.38,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgV,0,0);
-// 		pop();
-// 	}
-// }
-
-// // Animation I
-// //4Fs.jpg
-// class Anim_i {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.4,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgI,0,0);
-// 		pop();
-// 	}
-// }
-
-// // Animation B
-// //4G.jpg
-// class Anim_b {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.42,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgB,0,0);
-// 		pop();
-// 	}
-// }
-
-// // Animation O
-// //4Gs.jpg
-// class Anim_o {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.44,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgO, 0,0);
-// 		pop();
-// 	}
-// }
-
-// // Animation N
-// //5A.jpg
-// class Anim_n {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.46,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgN,0,0);
-// 		pop();
-// 	}
-// }
-
-// // Animation P
-// //5As.jpg
-// class Anim_p {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.48,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgP,0,0);
-// 		pop();
-// 	}
-// }
-
-// // Animation M
-// //5B.jpg
-// class Anim_m {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.5,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgM,0,0);
-// 		pop();
-// 	}
-// }
-
-
-// // Animation Z
-// //5C.jpg
-// class Anim_z {
-// 	constructor(velocity) {
-// 		this.velocity=velocity;
-// 		this.x = random(width);
-// 		this.y = (this.velocity)*height-width/26;
-// 		this.diameter = 0;
-// 		this.alpha = 255;
-// 		console.log (this.velocity);
-// 	}
-// 	draw() {
-// 		push();
-// 		translate(width*0.55,this.y);
-// 		rotate(PI / ((this.velocity)*10));
-// 		scale(this.velocity*0.5);
-// 		image(imgZ,0,0);
-// 		pop();
-// 	}
-// }
 
