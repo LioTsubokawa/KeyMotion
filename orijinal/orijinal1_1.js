@@ -35,13 +35,18 @@ function preload() {
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
+	imageMode(CENTER);
 }
 
 function draw() {
 	background(255);
 	if (animation.length > 0) {
-		for (let i = 0; i < animation.length; i++) {
+		for (let i = animation.length - 1; i >= 0; i--) {
 			animation[i].draw();
+			animation[i].join(animation);
+			if (animation[i].alpha < 0) {
+				animation.splice(i, 1);
+			}
 		}
 	}
 }
