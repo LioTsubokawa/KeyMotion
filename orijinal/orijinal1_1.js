@@ -228,13 +228,7 @@ WebMidi.enable((eer) => {
 
 	
 
-	if (name === "C" ) {
-		if (accidental === "#"){
-			animation.push(new Anim_Cs(velocity,imgCs,octave + offset));
-		} else{
-			animation.push(new Anim_C(velocity,imgC,octave + offset));
-		}
-	}
+	
 	
 
 

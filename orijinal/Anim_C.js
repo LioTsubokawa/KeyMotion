@@ -30,7 +30,10 @@ class Anim_C {
 
 	draw() {
 		push();
-		translate(this.x,this.y);
+		translate(
+			this.x + map(noise(frameCount * 0.01 + this.velocity + this.octave*10),0,1,-(width*0.03),width*0.03) ,
+			this.y + map(noise(frameCount * 0.01 + this.velocity + this.octave*10),0,1,-(width*0.03),width*0.03)	
+		);
 		rotate(PI / ((this.velocity)/15));
 		scale(this.velocity*0.8);
 		tint(this.color[this.octave-1].r, this.color[this.octave-1].g, this.color[this.octave-1].b);
