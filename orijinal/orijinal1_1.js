@@ -1,3 +1,4 @@
+
 let animation = [];
 let num;
 // const maxAnim = 6;
@@ -36,6 +37,7 @@ function preload() {
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	imageMode(CENTER);
+	window.threshold = width*0.025;
 }
 
 function draw() {

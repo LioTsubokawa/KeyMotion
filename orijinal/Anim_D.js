@@ -54,15 +54,17 @@ class Anim_D {
 	join(animations) {
 		animations.forEach((animation) => {
 			const dis = dist(this.x, this.y, animation.x, animation.y);
-			// if (dis < 100) {
+			
+			if (dis < window.threshold ) {
 				stroke(
-          this.color[this.octave - 1].r,
-          this.color[this.octave - 1].g,
-          this.color[this.octave - 1].b,
-          this.alpha
-        );
+					this.color[this.octave - 1].r,
+					this.color[this.octave - 1].g,
+					this.color[this.octave - 1].b,
+					this.alpha
+				);
+
 				line(this.px, this.py, animation.px, animation.py);
-			// }
+			 }
 		});
 	}
 }

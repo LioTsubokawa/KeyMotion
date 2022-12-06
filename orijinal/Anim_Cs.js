@@ -55,7 +55,7 @@ class Anim_Cs {
 	join(animations){
 		animations.forEach((animation) =>{
 			const dis = dist(this.x, this.y, animation.x,animation.y);
-			//if (dis < 100) {
+			if (dis < window.threshold) {
 				stroke(
 					this.color[this.octave-1].r,
 					this.color[this.octave-1].g,
@@ -64,7 +64,7 @@ class Anim_Cs {
 				);
 
 				line(this.px,this.py,animation.px,animation.py);
-			//}
+			}
 		});
 	}
 

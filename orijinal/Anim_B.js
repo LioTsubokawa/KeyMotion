@@ -5,7 +5,7 @@ class Anim_B {
 		this.velocity=velocity;
 		this.octave=octave;
         this.img=img;
-		this.x = width/60*((octave-2)*12+12);
+		this.x = width/62*((octave-2)*12+12);
 		this.px = this.x;
 		this.y = (this.velocity)*height+random(-10,10);
 		this.py = this.y;
@@ -16,17 +16,18 @@ class Anim_B {
 		console.log (octave);
 		console.log (this.x);
 		this.color = [
-			{r:142, g:111,  b:122,  a:255},//1D
-			{r:178, g:135,  b:149,  a:255},//2D
-			{r:211, g:157,  b:173,  a:255},//3D
-			{r:242, g:214,  b:223,  a:255},//4D
-			{r:255, g:233,  b:241,  a:255},//5D
+			{r:142, g:111,  b:122,  a:255},//1
+			{r:178, g:135,  b:149,  a:255},//2
+			{r:211, g:157,  b:173,  a:255},//3
+			{r:242, g:214,  b:223,  a:255},//4
+			{r:255, g:233,  b:241,  a:255},//5
+			{r:255, g:233,  b:241,  a:255},//6
 			
 		
 		];
 	}
 	draw() {
-
+        console.log (this.x);
 		this.px = this.x + map(noise(frameCount * 0.01 + this.velocity + this.octave*10),0,1,-(width*0.03),width*0.03);
 		this.py = this.y + map(noise(frameCount * 0.01 + this.velocity + this.octave*10),0,1,-(width*0.03),width*0.03);
 
@@ -51,15 +52,15 @@ class Anim_B {
 	join(animations) {
 		animations.forEach((animation) => {
 			const dis = dist(this.x, this.y, animation.x, animation.y);
-			// if (dis < 100) {
+			if (dis < window.threshold) {
 				stroke(
-          this.color[this.octave - 1].r,
-          this.color[this.octave - 1].g,
-          this.color[this.octave - 1].b,
-          this.alpha
-        );
+					this.color[this.octave - 2].r,
+					this.color[this.octave - 2].g,
+					this.color[this.octave - 2].b,
+					this.alpha
+					);
 				line(this.px, this.py, animation.px, animation.py);
-			// }
+			}
 		});
 	}
 	
