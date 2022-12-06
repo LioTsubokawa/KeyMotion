@@ -53,9 +53,9 @@ class Anim_A {
 			const dis = dist(this.x, this.y, animation.x, animation.y);
 			if (dis < window.threshold) {
 				stroke(
-					this.color[this.octave - 1].r,
-					this.color[this.octave - 1].g,
-					this.color[this.octave - 1].b,
+					this.color[this.octave - 2].r,
+					this.color[this.octave - 2].g,
+					this.color[this.octave - 2].b,
 					this.alpha
         );
 				line(this.px, this.py, animation.px, animation.py);
