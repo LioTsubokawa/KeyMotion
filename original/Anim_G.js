@@ -1,11 +1,11 @@
-// Animation Fs
-//3C.png
-class Anim_Fs {
+// Animation G
+//3G.png
+class Anim_G {
 	constructor(velocity,img,octave) {
 		this.velocity=velocity;
 		this.octave=octave;
         this.img=img;
-		this.x = width/62*((octave-1)*12+7);
+		this.x = width/64*((octave-1)*12+8);
 		this.px = this.x;
 		this.y = (this.velocity)*height+random(-10,10);
 		this.py = this.y;
@@ -16,11 +16,11 @@ class Anim_Fs {
 		console.log (octave);
 		console.log (this.x);
 		this.color = [
-			{r:130,  g:65,   b:47,  a:255},//1Ds
-			{r:170,  g:87,   b:61,  a:255},//2Ds
-			{r:208,  g:109,   b:72,  a:255},//3Ds
-			{r:249, g:161,   b:138, a:255},//4Ds
-			{r:255, g:179,   b:159, a:255},//5Ds
+			{r:1,  g:122,   b:122,  a:255},//1Ds
+			{r:2,  g:159,   b:163,  a:255},//2Ds
+			{r:0,  g:185,   b:200,  a:255},//3Ds
+			{r:92, g:255,   b:255, a:255},//4Ds
+			{r:171, g:255,   b:255, a:255},//5Ds
 			
 		
 		];
@@ -46,7 +46,6 @@ class Anim_Fs {
 		pop();
 		this.alpha -= 3;
 	} 
-
 	
 	join(animations) {
 		animations.forEach((animation) => {
@@ -58,11 +57,9 @@ class Anim_Fs {
 					this.color[this.octave - 1].g,
 					this.color[this.octave - 1].b,
 					this.alpha
-        );
+					);
 				line(this.px, this.py, animation.px, animation.py);
-			
 			}
 		});
 	}
-	
 }

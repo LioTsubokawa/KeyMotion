@@ -1,11 +1,11 @@
-// Animation G
-//3G.png
-class Anim_Gs {
+// Animation A
+//4A.png
+class Anim_A {
 	constructor(velocity,img,octave) {
 		this.velocity=velocity;
 		this.octave=octave;
         this.img=img;
-		this.x = width/62*((octave-1)*12+9);
+		this.x = width/64*((octave-2)*12+10);
 		this.px = this.x;
 		this.y = (this.velocity)*height+random(-10,10);
 		this.py = this.y;
@@ -16,11 +16,11 @@ class Anim_Gs {
 		console.log (octave);
 		console.log (this.x);
 		this.color = [
-			{r:41,  g:96,   b:109,  a:255},//1Ds
-			{r:49,  g:117,   b:137,  a:255},//2Ds
-			{r:61,  g:145,   b:179,  a:255},//3Ds
-			{r:121, g:207,   b:226, a:255},//4Ds
-			{r:158, g:224,   b:239, a:255},//5Ds
+			{r:114, g:68,  b:96,  a:255},//1D
+			{r:142, g:82,  b:116,  a:255},//2D
+			{r:183, g:105,  b:147,  a:255},//3D
+			{r:219, g:158, b:193, a:255},//4D
+			{r:242, g:201, b:227, a:255},//5D
 			
 		
 		];
@@ -38,9 +38,9 @@ class Anim_Gs {
 		rotate(PI / ((this.velocity)/15));
 		scale(this.velocity*0.8);
 		tint(
-			this.color[this.octave-1].r,
-			this.color[this.octave-1].g,
-			this.color[this.octave-1].b,
+			this.color[this.octave-2].r,
+			this.color[this.octave-2].g,
+			this.color[this.octave-2].b,
 			this.alpha
 		);
 		image(this.img, 0,0,width/26,width/26 );
@@ -53,11 +53,11 @@ class Anim_Gs {
 			const dis = dist(this.x, this.y, animation.x, animation.y);
 			if (dis < window.threshold) {
 				stroke(
-					this.color[this.octave - 1].r,
-					this.color[this.octave - 1].g,
-					this.color[this.octave - 1].b,
+					this.color[this.octave - 2].r,
+					this.color[this.octave - 2].g,
+					this.color[this.octave - 2].b,
 					this.alpha
-					);
+        );
 				line(this.px, this.py, animation.px, animation.py);
 			}
 		});

@@ -6,7 +6,7 @@ class Anim_D {
 		this.velocity=velocity;
 		this.octave=octave;
         this.img=img;
-		this.x = width/62*((octave-1)*12+3);
+		this.x = width/64*((octave-1)*12+3);
 		this.px = this.x;
 		this.y = (this.velocity)*height+random(-10,10);
 		this.py = this.y;
